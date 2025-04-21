@@ -1,62 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Profile Card</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-.title {
-  color: grey;
-  font-size: 18px;
-}
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
 
-button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-}
+    .card {
+      background-color: #fff;
+      width: 100%;
+      max-width: 350px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
 
-a {
-  text-decoration: none;
-  font-size: 22px;
-  color: black;
-}
+    .card:hover {
+      transform: translateY(-5px);
+    }
 
-button:hover, a:hover {
-  opacity: 0.7;
-}
-</style>
+    .card img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .card h1 {
+      font-size: 24px;
+      margin: 16px 0 8px;
+      color: #333;
+    }
+
+    .title {
+      color: #777;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .card p {
+      color: #555;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .socials {
+      margin: 16px 0;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      color: #0e76a8; /* LinkedIn Blue */
+      font-size: 20px;
+      transition: color 0.3s;
+    }
+
+    .socials a:hover {
+      color: #005983;
+    }
+
+    .card button {
+      background-color: #0e76a8;
+      border: none;
+      color: white;
+      padding: 12px;
+      width: 90%;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-bottom: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .card button:hover {
+      background-color: #005983;
+    }
+
+    @media (max-width: 400px) {
+      .card {
+        margin: 20px;
+      }
+
+      .card h1 {
+        font-size: 20px;
+      }
+
+      .title {
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<h2 style="text-align:center">User Profile Card</h2>
-
-<div class="card">
-  <img src="./ReenaAggarwal.jpg" alt="ReenaAgg" style="width:100%">
-  <h1>Reena Aggarwal</h1>
-  <p class="title">Head of Operations & Sales</p>
-  <p>Harvard University</p>
-  <div style="margin: 24px 0;">
-<!--     <a href="#"><i class="fa fa-dribbble"></i></a> 
-    <a href="#"><i class="fa fa-twitter"></i></a>   -->
-    <a href="#"><i class="fa fa-linkedin"></i></a>  
-<!--     <a href="#"><i class="fa fa-facebook"></i></a>  -->
+  <div class="card">
+    <img src="./ReenaAggarwal.jpg" alt="Reena Aggarwal">
+    <h1>Reena Aggarwal</h1>
+    <p class="title">Head of Operations & Sales</p>
+    <p>Harvard University</p>
+    <div class="socials">
+      <a href="#"><i class="fa fa-linkedin"></i></a>
+    </div>
+    <button>Contact</button>
   </div>
-  <p><button>Contact</button></p>
-</div>
 
 </body>
 </html>
