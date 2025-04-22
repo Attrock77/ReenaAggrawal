@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Reena Aggarwal</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
   <style>
     * {
       box-sizing: border-box;
@@ -90,6 +90,11 @@
       color: #005983;
     }
 
+    /* Remove underline from icons */
+    a i {
+      text-decoration: none;
+    }
+
     .card button {
       background-color: #0e76a8;
       border: none;
@@ -123,6 +128,18 @@
       color: #f4f4f4;
     }
 
+    /* Make Attrock.com white in dark mode */
+    .attrock-link {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .dark-mode .attrock-link {
+      color: white !important;
+    }
+
     @media (max-width: 400px) {
       .card {
         margin: 20px;
@@ -146,11 +163,11 @@
   </button>
 
   <div class="card">
-    <img src="./ReenaAggarwal.jpg" alt="Reena Aggarwal">
+    <img src="./ReenaAggarwal.jpg" alt="Reena Aggarwal" />
     <h1>Reena Aggarwal</h1>
     <p class="title">Head of Operations & Sales</p>
     <p>
-      <a href="https://attrock.com/" target="_blank" style="text-decoration: none; color: black; font-weight: bold;">
+      <a href="https://attrock.com/" target="_blank" class="attrock-link">
         Attrock.com
       </a>
     </p>
@@ -169,13 +186,8 @@
     function toggleDarkMode() {
       document.body.classList.toggle('dark-mode');
       const icon = document.getElementById("darkIcon");
-      if (document.body.classList.contains('dark-mode')) {
-        icon.classList.remove("fa-moon-o");
-        icon.classList.add("fa-sun-o");
-      } else {
-        icon.classList.remove("fa-sun-o");
-        icon.classList.add("fa-moon-o");
-      }
+      icon.classList.toggle("fa-moon-o");
+      icon.classList.toggle("fa-sun-o");
     }
   </script>
 
