@@ -20,6 +20,12 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      transition: background-color 0.4s, color 0.4s;
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: #f4f4f4;
     }
 
     .card {
@@ -30,7 +36,12 @@
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       text-align: center;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, background-color 0.3s, color 0.3s;
+    }
+
+    .dark-mode .card {
+      background-color: #1e1e1e;
+      color: #f4f4f4;
     }
 
     .card:hover {
@@ -46,7 +57,7 @@
     .card h1 {
       font-size: 24px;
       margin: 16px 0 8px;
-      color: #333;
+      color: inherit;
     }
 
     .title {
@@ -55,8 +66,11 @@
       margin-bottom: 4px;
     }
 
+    .dark-mode .title {
+      color: #bbb;
+    }
+
     .card p {
-      color: #555;
       font-size: 14px;
       margin-bottom: 16px;
     }
@@ -67,7 +81,7 @@
 
     .socials a {
       margin: 0 10px;
-      color: #0e76a8; /* LinkedIn Blue */
+      color: #0e76a8;
       font-size: 20px;
       transition: color 0.3s;
     }
@@ -93,6 +107,22 @@
       background-color: #005983;
     }
 
+    .dark-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+      color: #333;
+      transition: color 0.3s;
+    }
+
+    .dark-mode .dark-toggle {
+      color: #f4f4f4;
+    }
+
     @media (max-width: 400px) {
       .card {
         margin: 20px;
@@ -110,18 +140,44 @@
 </head>
 <body>
 
+  <!-- 🌗 Dark mode toggle -->
+  <button class="dark-toggle" onclick="toggleDarkMode()" id="darkModeBtn">
+    <i class="fa fa-moon-o" id="darkIcon"></i>
+  </button>
+
   <div class="card">
     <img src="./ReenaAggarwal.jpg" alt="Reena Aggarwal">
     <h1>Reena Aggarwal</h1>
     <p class="title">Head of Operations & Sales</p>
-    <p><a href="https://attrock.com/" target="_blank" style="text-decoration: none; color: black; font-weight: bold;">Attrock.com</a></p>
-<!--     <p>Harvard University</p> -->
+    <p>
+      <a href="https://attrock.com/" target="_blank" style="text-decoration: none; color: black; font-weight: bold;">
+        Attrock.com
+      </a>
+    </p>
     <div class="socials">
-      <a href="mailto:reena.1stw@gmail.com?subject=Hello%20Reena&body=Hi%20Reena%2C%0AI'd%20love%20to%20connect%20with%20you."><i class="fa fa-envelope"></i></a>
-      <a href="https://www.linkedin.com/in/reena-aggarwal-243235127/"><i class="fa fa-linkedin"></i></a>
+      <a href="mailto:reena.1stw@gmail.com?subject=Hello%20Reena&body=Hi%20Reena%2C%0AI'd%20love%20to%20connect%20with%20you.">
+        <i class="fa fa-envelope"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/reena-aggarwal-243235127/">
+        <i class="fa fa-linkedin"></i>
+      </a>
     </div>
     <a href="tel:+919311023300"><button>Contact</button></a>
   </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+      const icon = document.getElementById("darkIcon");
+      if (document.body.classList.contains('dark-mode')) {
+        icon.classList.remove("fa-moon-o");
+        icon.classList.add("fa-sun-o");
+      } else {
+        icon.classList.remove("fa-sun-o");
+        icon.classList.add("fa-moon-o");
+      }
+    }
+  </script>
 
 </body>
 </html>
